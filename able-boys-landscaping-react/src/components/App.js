@@ -1,12 +1,36 @@
-import React from "react";
-import Router from './Router'
-import { BrowserRouter, Route } from "react-router-dom";
+import React, { Component } from "react";
+import { Route, Switch, BrowserRouter } from "react-router-dom";
 
-function App() {
-  return (
-    <BrowserRouter>
-      <Route path="/" component={Router} />
-    </BrowserRouter>
-  )
+import HomePage from "./HomePage";
+
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import theme from './Theme'
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      loading: true,
+    };
+  }
+  /*if (loading) {
+    return <ProgressSpinner />
+  }*/
+  render() {
+    return (
+      <MuiThemeProvider muiTheme={getMuiTheme(theme)}>
+
+        <BrowserRouter>
+          <Switch>
+            <Route exact path="/" render={routeProps => (
+              <HomePage
+                {...routeProps}
+              />)}
+            />
+          </Switch>
+        </BrowserRouter>
+      </MuiThemeProvider>
+    )
+  }
 }
 export default App;
