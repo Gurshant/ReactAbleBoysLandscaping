@@ -1,16 +1,14 @@
 import React, { Component } from 'react'
+import NavBar from './NavBar.js';
+const HomePage = (props) => {
 
-class HomePage extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return (
+  return (
+    <>
+      <NavBar />
       <main >
         Hello World.
       </main>
-    );
-  }
+    </>
+  );
 }
 export default HomePage;
