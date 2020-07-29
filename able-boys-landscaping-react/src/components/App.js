@@ -3,8 +3,8 @@ import { Route, Switch, BrowserRouter } from "react-router-dom";
 
 import HomePage from "./HomePage";
 
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
+import createMuiTheme from '@material-ui/core/styles/createMuiTheme';
 import theme from './Theme'
 class App extends Component {
   constructor(props) {
@@ -13,12 +13,9 @@ class App extends Component {
       loading: true,
     };
   }
-  /*if (loading) {
-    return <ProgressSpinner />
-  }*/
   render() {
     return (
-      <MuiThemeProvider muiTheme={getMuiTheme(theme)}>
+      <MuiThemeProvider muiTheme={createMuiTheme(theme)}>
 
         <BrowserRouter>
           <Switch>

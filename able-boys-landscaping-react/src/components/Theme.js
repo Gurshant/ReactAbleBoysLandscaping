@@ -4,7 +4,13 @@ import { createMuiTheme } from '@material-ui/core/styles';
 // A custom theme for this app
 const THEME = createMuiTheme({
   palette: {
-    primary: Colors.teal,
+    primary: {
+      light: '#755A26',
+      main: '#755A26',
+      dark: '#755A26',
+      contrastText: '#000'
+
+    },
     secondary: {
       light: '#fff',
       main: '#fff',
@@ -13,8 +19,9 @@ const THEME = createMuiTheme({
     }
   },
   appBar: {
-    color: '#063252'
+    color: '#755A26'
   },
+
 });
 
 export default THEME;

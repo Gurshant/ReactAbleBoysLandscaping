@@ -20,7 +20,7 @@ const useStyles = makeStyles(theme => ({
     flexShrink: 0,
   },
   drawerPaper: {
-    background: '#063252',
+    backgroundColor: theme.palette.primary.main,
     width: drawerWidth,
   },
   drawerHeader: {
